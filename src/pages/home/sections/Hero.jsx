@@ -54,7 +54,7 @@ const Hero = () => {
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1]">
-                Hi, I'm Your Name
+                Hi, I'm Charlotte M Seyab
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
@@ -65,13 +65,13 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+          <div id='Projects' className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <button className="group relative px-6 py-3 w-48 overflow-hidden rounded-lg bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1] text-[#0F172A] font-medium">
               <span className="relative z-10">View Projects</span>
               <div className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left bg-gradient-to-r from-[#E5D4A1] to-[#C6A55C]" />
             </button>
             
-            <button className="group relative px-6 py-3 w-48 overflow-hidden rounded-lg border border-[#C6A55C] text-[#C6A55C]">
+            <button id='Contact' className="group relative px-6 py-3 w-48 overflow-hidden rounded-lg border border-[#C6A55C] text-[#C6A55C]">
               <span className="relative z-10 group-hover:text-[#0F172A] transition-colors duration-300">Contact Me</span>
               <div className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left bg-[#C6A55C]" />
             </button>

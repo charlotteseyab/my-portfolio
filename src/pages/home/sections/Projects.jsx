@@ -1,49 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import img2 from "../../../assets/images/image2.jpg";
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState("All");
 
   const projects = [
     {
       title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory and payment processing",
-      image: "/project1.jpg",
+      description:
+        "A full-stack e-commerce solution with real-time inventory and payment processing",
+      image: img2,
       category: "Full Stack",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       link: "#",
-      github: "#"
+      github: "#",
     },
     {
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media management with real-time data visualization",
-      image: "/project2.jpg",
+      title: "E-commerce Website",
+      description:
+        "An e-commerce website built with React and Tailwind CSS and integrated with paystack for payment processing",
+      image: img2,
       category: "Frontend",
-      tech: ["React", "TypeScript", "Tailwind", "Chart.js"],
-      link: "#",
-      github: "#"
+      tech: ["React", "JavaScript", "Tailwind", "Formspree"],
+      link: "https://brownandbrownfoods.netlify.app/",
+      github: "#",
     },
     {
       title: "AI Content Generator",
-      description: "AI-powered platform for generating marketing content using GPT-3",
-      image: "/project3.jpg",
+      description:
+        "AI-powered platform for generating marketing content using GPT-3",
+      image: img2,
       category: "Backend",
       tech: ["Python", "OpenAI", "Next.js", "PostgreSQL"],
       link: "#",
-      github: "#"
+      github: "#",
     },
     // Add more projects...
   ];
 
-  const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
+  const categories = ["All", "Full Stack", "Frontend", "Backend"];
 
   return (
     <section id="projects" className="py-24 relative">
       {/* Background */}
       <div className="absolute inset-0 bg-[#0A0F1C]">
-        <div className="absolute inset-0 opacity-20"
+        <div
+          className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: 'radial-gradient(circle at center, #C6A55C 1px, transparent 1px)',
-            backgroundSize: '48px 48px'
+            backgroundImage:
+              "radial-gradient(circle at center, #C6A55C 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
         />
       </div>
@@ -56,7 +62,10 @@ const Projects = () => {
             Portfolio
           </div>
           <h2 className="text-4xl font-bold text-white">
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1]">Projects</span>
+            Featured{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1]">
+              Projects
+            </span>
           </h2>
         </div>
 
@@ -68,8 +77,8 @@ const Projects = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-6 py-2 rounded-full transition-all duration-300 ${
                 activeFilter === category
-                  ? 'bg-[#C6A55C] text-[#0A0F1C]'
-                  : 'bg-[#1E293B] text-gray-300 hover:bg-[#C6A55C]/20'
+                  ? "bg-[#C6A55C] text-[#0A0F1C]"
+                  : "bg-[#1E293B] text-gray-300 hover:bg-[#C6A55C]/20"
               }`}
             >
               {category}
@@ -80,7 +89,10 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects
-            .filter(project => activeFilter === 'All' || project.category === activeFilter)
+            .filter(
+              (project) =>
+                activeFilter === "All" || project.category === activeFilter
+            )
             .map((project, index) => (
               <div
                 key={index}
@@ -98,12 +110,16 @@ const Projects = () => {
                     <div className="flex gap-4 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
                       <a
                         href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 bg-[#C6A55C] text-[#0A0F1C] rounded-lg font-medium hover:bg-[#E5D4A1] transition-colors"
                       >
                         Live Demo
                       </a>
                       <a
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 bg-[#1E293B] text-white rounded-lg font-medium hover:bg-[#2E3B4B] transition-colors"
                       >
                         Code
@@ -122,7 +138,7 @@ const Projects = () => {
                       {project.category}
                     </span>
                   </div>
-                  
+
                   <p className="text-gray-400 text-sm line-clamp-2">
                     {project.description}
                   </p>

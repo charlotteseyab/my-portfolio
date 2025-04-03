@@ -76,12 +76,12 @@ const Navbar = () => {
                 />
               </a>
             ))}
-            <button className="relative overflow-hidden px-6 py-2 rounded-lg group">
+            {/* <button className="relative overflow-hidden px-6 py-2 rounded-lg group">
               <span className="absolute inset-0 w-full h-full transition-all duration-300 bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1] opacity-0 group-hover:opacity-100"></span>
               <span className="relative text-[#C6A55C] group-hover:text-[#0F172A] transition-colors duration-300">
                 Resume
               </span>
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}

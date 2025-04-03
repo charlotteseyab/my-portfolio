@@ -11,8 +11,8 @@ const Skills = () => {
           name: "Frontend",
           expertise: [
             { tech: "React", level: 95 },
-            { tech: "Next.js", level: 90 },
-            { tech: "TypeScript", level: 85 },
+            { tech: "Laravel", level: 90 },
+            { tech: "JavaScript", level: 85 },
             { tech: "Tailwind", level: 90 }
           ]
         },
@@ -20,9 +20,9 @@ const Skills = () => {
           name: "Backend",
           expertise: [
             { tech: "Node.js", level: 88 },
-            { tech: "Python", level: 85 },
+            { tech: "PHP", level: 85 },
             { tech: "MongoDB", level: 92 },
-            { tech: "PostgreSQL", level: 87 }
+            { tech: "MySQL", level: 87 }
           ]
         }
       ]
@@ -43,9 +43,9 @@ const Skills = () => {
           name: "Platforms",
           expertise: [
             { tech: "AWS", level: 85 },
-            { tech: "Vercel", level: 90 },
+            { tech: "Netlify", level: 90 },
             { tech: "Firebase", level: 88 },
-            { tech: "Heroku", level: 85 }
+            { tech: "Render", level: 85 }
           ]
         }
       ]

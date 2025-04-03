@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutImage from '../../../assets/images/img1.jpg'
 
 const About = () => {
   const skills = [
@@ -30,14 +31,14 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1] rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
               <div className="relative bg-[#1E293B] p-3 rounded-3xl">
                 <img
-                  src="/your-image.jpg"
+                  src={aboutImage}
                   alt="Profile"
-                  className="w-full h-[400px] object-cover rounded-2xl"
+                  className="w-full h-[500px] object-cover rounded-2xl"
                 />
                 
                 {/* Overlay Info */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <h3 className="text-2xl font-bold text-white">Your Name</h3>
+                  <h3 className="text-2xl font-bold text-white">Charlotte M Seyab</h3>
                   <p className="text-[#C6A55C]">Full Stack Developer</p>
                 </div>
               </div>
@@ -46,10 +47,10 @@ const About = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: 'Experience', value: '4+ Years' },
-                { label: 'Projects', value: '50+ Completed' },
+                { label: 'Experience', value: '2+ Years' },
+                { label: 'Projects', value: '15+ Completed' },
                 { label: 'Clients', value: '30+ Happy' },
-                { label: 'Awards', value: '5+ Received' }
+                { label: 'Awards', value: '1 Received' }
               ].map((stat, index) => (
                 <div 
                   key={index}
@@ -131,7 +132,7 @@ const About = () => {
               </a>
               <a
                 href="/resume.pdf"
-                className="px-8 py-4 border border-[#C6A55C] text-[#C6A55C] rounded-xl hover:bg-[#C6A55C]/10 transition-all duration-300 flex items-center gap-2"
+                className="px-8 py-4 border border-[#C6A55C] text-[#C6A55C] rounded-xl hover:bg-[#C6A55C]/10 transition-all duration-300 flex items-center gap-2" target='_blank'
               >
                 View Resume
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -8,7 +8,7 @@ const Testimonials = () => {
       author: "Sarah Johnson",
       position: "CTO, TechCorp",
       // image: "https://your-image-url.com/sarah.jpg", // Replace with actual image URL
-      rating: 5,
+      rating: 4,
       type: "Client"
     },
     {
