@@ -1,37 +1,93 @@
 import React, { useState } from "react";
 import img2 from "../../../assets/images/image2.jpg";
+import yanivore from "../../../assets/images/yanivore.png"
+import ride from "../../../assets/images/ride.png"
+import librarium from "../../../assets/images/librarium.png"
+import fashion from "../../../assets/images/fashion.png"
+import pato from "../../../assets/images/pato.png"
+import cine from "../../../assets/images/cine.png"
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Yanivore",
       description:
         "A full-stack e-commerce solution with real-time inventory and payment processing",
+      image: yanivore,
+      category: "Full Stack",
+      tech: ["Laravel", "PHP", "Paystack"],
+      link: "#",
+      github: "https://github.com/charlotteseyab/yanivore.git",
+    },
+    {
+      title: "Evently",
+      description:
+        "A full-stack events website",
       image: img2,
       category: "Full Stack",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "#",
+      tech: ["React", "Express", "JavaScript", "Tailwind", "MongoDB", "MulterSaveFiles"],
+      link: "https://eventlyevents.netlify.app",
       github: "#",
     },
     {
-      title: "E-commerce Website",
+      title: "Librarium",
+      description:
+        "A full-stack library management website",
+      image: librarium,
+      category: "Full Stack",
+      tech: ["React", "Express", "JavaScript", "Tailwind", "MongoDB"],
+      link: "https://library-app-coral-six.vercel.app/",
+      github: "#",
+    },
+    {
+      title: "Brown and Brown Food",
       description:
         "An e-commerce website built with React and Tailwind CSS and integrated with paystack for payment processing",
       image: img2,
       category: "Frontend",
-      tech: ["React", "JavaScript", "Tailwind", "Formspree"],
+      tech: ["React", "JavaScript", "Tailwind", "Formspree", "Paystack"],
       link: "https://brownandbrownfoods.netlify.app/",
       github: "#",
     },
     {
-      title: "AI Content Generator",
+      title: "Male Fashion",
       description:
-        "AI-powered platform for generating marketing content using GPT-3",
-      image: img2,
+        "An website that deals in male fashion",
+      image: fashion,
+      category: "Frontend",
+      tech: ["HTML", "CSS"],
+      link: "https://charlotteseyab.github.io/Fashion-page/",
+      github: "https://github.com/charlotteseyab/Fashion-page.git",
+    },
+    {
+      title: "Pato Place",
+      description:
+        "An website for a resturant",
+      image: pato,
+      category: "Frontend",
+      tech: ["HTML", "CSS"],
+      link: "https://charlotteseyab.github.io/practice-work/",
+      github: "https://github.com/charlotteseyab/practice-work.git",
+    },
+    {
+      title: "Ride API",
+      description:
+        "An API for a ride-hailing app ",
+      image: ride,
       category: "Backend",
-      tech: ["Python", "OpenAI", "Next.js", "PostgreSQL"],
+      tech: ["JavaScript", "Express", "MongoDB", "Google Maps"],
+      link: "#",
+      github: "https://github.com/charlotteseyab/ride-api.git",
+    },
+    {
+      title: "cineHive API",
+      description:
+        "An API for a ride-hailing app ",
+      image: cine,
+      category: "Backend",
+      tech: ["JavaScript", "Express", "MongoDB"],
       link: "#",
       github: "#",
     },
