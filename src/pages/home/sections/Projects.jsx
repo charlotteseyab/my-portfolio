@@ -49,7 +49,7 @@ const Projects = () => {
       category: "Frontend",
       tech: ["React", "JavaScript", "Tailwind", "Formspree", "Paystack"],
       link: "https://brownandbrownfoods.netlify.app/",
-      github: "#",
+      github: "https://github.com/charlotteseyab/YAI-project.git",
     },
     {
       title: "Male Fashion",
