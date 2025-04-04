@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
   const contactInfo = [
@@ -61,6 +61,43 @@ const Contact = () => {
       )
     }
   ];
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState('success');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formspree.io/f/mkgjbzee", {
+        method: "POST",
+        body: new FormData(e.target),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        e.target.reset();
+        setToastMessage('Message sent successfully!');
+        setToastType('success');
+      } else {
+        setToastMessage('Failed to send message. Please try again.');
+        setToastType('error');
+      }
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+    } catch (error) {
+      setToastMessage('Failed to send message. Please try again.');
+      setToastType('error');
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
@@ -132,7 +169,10 @@ const Contact = () => {
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1] rounded-2xl blur opacity-10" />
                 <div className="relative bg-[#1E293B]/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800/50">
-                  <form action = "https://formspree.io/f/mkgjbzee" method='POST' className="space-y-6">
+                  <form 
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-sm text-gray-400">Name</label>
@@ -169,18 +209,23 @@ const Contact = () => {
                     </div>
                     <button
                       type="submit"
-                      className="w-full group relative px-8 py-4 bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1] text-[#0A0F1C] rounded-lg font-medium overflow-hidden transition-all duration-300"
+                      disabled={isSubmitting}
+                      className={`w-full group relative px-8 py-4 bg-gradient-to-r from-[#C6A55C] to-[#E5D4A1] text-[#0A0F1C] rounded-lg font-medium overflow-hidden transition-all duration-300 ${
+                        isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                      }`}
                     >
                       <div className="relative z-10 flex items-center justify-center gap-2">
-                        <span>Send Message</span>
-                        <svg 
-                          className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
+                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                        {!isSubmitting && (
+                          <svg 
+                            className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        )}
                       </div>
                     </button>
                   </form>
@@ -190,6 +235,14 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {showToast && (
+        <div className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg ${
+          toastType === 'success' ? 'bg-green-500' : 'bg-red-500'
+        } text-white`}>
+          {toastMessage}
+        </div>
+      )}
     </section>
   )
 }
