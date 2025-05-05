@@ -4,7 +4,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      content: "Working with [Your Name] was an incredible experience. Their technical expertise and attention to detail transformed our project into something extraordinary. They consistently delivered beyond our expectations.",
+      content: "Working with Charlotte Seyab was an incredible experience. Their technical expertise and attention to detail transformed our project into something extraordinary. They consistently delivered beyond our expectations.",
       author: "Sarah Johnson",
       position: "CTO, TechCorp",
       // image: "https://your-image-url.com/sarah.jpg", // Replace with actual image URL
